@@ -1,0 +1,19 @@
+<section class="post">
+  <mat-grid-list cols="4" rowHeight="350px">
+    <mat-grid-tile *ngFor="let post of userService.posts">
+      <mat-card class="example-card">
+        <mat-card-content>
+          <p><strong>POST</strong></p>
+          <p><strong>ID: </strong>{{post.id}}</p>
+          <p><strong>Post title: </strong>{{post.title}}</p>
+          <p><strong>Post body: </strong>{{post.body}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button [disabled]="getIsActivated(post.id)" (click)="onChange(post.id)" color="primary">
+            ACTIVE
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>

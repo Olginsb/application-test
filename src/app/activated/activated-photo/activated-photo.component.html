@@ -1,0 +1,24 @@
+<section class="photo">
+  <mat-grid-list cols="3" rowHeight="500px">
+    <mat-grid-tile *ngFor="let photo of userService.activePhotoId">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image">
+            <img src="{{photo.thumbnailUrl}}" alt="">
+          </div>
+          <div class="mat-card-header-title">
+            <mat-card-title>{{photo.id}}</mat-card-title>
+            <mat-card-subtitle>{{photo.title}}</mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <img class="main-img" mat-card-image src="{{photo.url}}" alt="">
+        <mat-card-content>
+          <p>{{photo.title}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button disabled>Activated</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>
